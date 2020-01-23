@@ -6,7 +6,7 @@ $chooser.ShowDialog()
 $fn = $chooser.filename
 $out = "$($fn).mrc"
 
-$exit = excel_marc --connect=$env:mdb --file=$fn --type=bib --format=mrc > $out
+excel_marc --connect=$env:mdb --file=$fn --type=bib --format=mrc --check=191a > $out
 
 if (!$?) {
 	powershell -noexit
