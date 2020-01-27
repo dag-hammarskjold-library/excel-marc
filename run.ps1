@@ -6,7 +6,7 @@ $chooser.ShowDialog()
 $fn = $chooser.filename
 $out = "$($fn).mrc"
 
-excel_marc --connect=$env:mdb --file=$fn --type=bib --format=mrc --check=191a > $out
+excel_marc --connect=$env:mdb --file=$fn --type=bib --format=mrc --check=191a --out=$out
 
 if (!$?) {
 	powershell -noexit
@@ -16,4 +16,3 @@ write-output $out | set-clipboard
 write-output "MARC file: " $out `n` "The file path has been added to your clipboard" `n`
 
 powershell -noexit
-
