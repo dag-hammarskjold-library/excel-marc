@@ -23,9 +23,13 @@ powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 * Double-click "run.ps1" 
 * Select the Excel file to convert
 
-Spreadsheet format example:
+###### Spreadsheet format example:
 
 |1.191a|1.191b|1.191c|2.191a|2.191b|2.191c|245a|245b|269a| 
 |-|-|-|-|-|-|-|-|-|
 |A/RES/1|A/|1|S/RES/1|S/|1|title|subtitle|date|
 |A/RES/2|A/|1|S/RES/2|S/|1|title|subtitle|date|
+
+###### Setting default values:
+
+Default values can be set by using a spreadheet of values in a file called "defaults.xlsx" and placing the file in the root of this repo. Any values found in the defaults file will be added to all the records in a converted spreadsheet if the given field is not already in the record being converted.
