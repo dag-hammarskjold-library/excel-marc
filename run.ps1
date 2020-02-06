@@ -4,9 +4,17 @@ Add-Type -AssemblyName System.Windows.Forms
 $chooser = New-Object System.Windows.Forms.OpenFileDialog -Property @{ InitialDirectory = [Environment]::GetFolderPath('Desktop') }
 $chooser.ShowDialog()
 $fn = $chooser.filename
+$defaults = ''
 $out = "$($fn).mrc"
 
-excel_marc --connect=$env:mdb --file=$fn --type=bib --format=mrc --check=191a --out=$out
+if (test-path 'defaults.xlsx' -PathType leaf) {
+	$defaults = 'defaults.xlsx'
+	write-output "Applying defaults from $($defaults)" 
+}
+
+
+
+excel_marc --connect=$env:mdb --file=$fn --type=bib --format=mrc --check=191a --defaults=$defaults --out=$out
 
 if (!$?) {
 	powershell -noexit
