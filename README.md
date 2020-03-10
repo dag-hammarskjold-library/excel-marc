@@ -15,7 +15,7 @@ setx MDB <MongoDB connection string>
 powershell Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
 
-* Right-click on the "run.ps1" file and set it to with Powershell by default
+* Right-click on the "run.ps1" file and set it to open with Powershell by default
 * Optional: right-click again on the "run.ps1" file and create a shortcut file. The shortcut file can be moved to any other directory, or the desktop for convenience.
 
 #### Usage:
