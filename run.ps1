@@ -12,8 +12,6 @@ if (test-path 'defaults.xlsx' -PathType leaf) {
 	write-output "Applying defaults from $($defaults)" 
 }
 
-
-
 excel_marc --connect=$env:mdb --file=$fn --type=bib --format=mrc --check=191a --defaults=$defaults --out=$out
 
 if (!$?) {
