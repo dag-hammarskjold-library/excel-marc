@@ -7,7 +7,7 @@
 ```bash
 git clone https://github.com/dag-hammarskjold-library/excel-marc
 cd excel-marc
-python -m venv env
+py -m venv env
 .\env\Scripts\activate
 pip install -r requirements.txt
 deactivate
